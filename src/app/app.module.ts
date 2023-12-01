@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
-import {HomeComponent} from "./home/home.component";
-import {provideRouter, RouterModule} from "@angular/router";
-import routeConfig from "./routes";
+import { RandomComponent } from './random/random.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    RandomComponent,
+    ListComponent
   ],
   imports: [
-    BrowserModule,
-    HomeComponent,
-    RouterModule,
+    BrowserModule, FormsModule
   ],
-  providers: [provideRouter(routeConfig)],
+  providers: [],
   bootstrap: [AppComponent]
 })
-
 export class AppModule { }
