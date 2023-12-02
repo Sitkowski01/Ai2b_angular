@@ -1,0 +1,21 @@
+{
+  "todos": [
+    {
+      "id": 2,
+      "title": "Hello Again World",
+      "deadline": "2000-01-01",
+      "completed": false,
+      "archived": false
+    },
+    {
+      "id": 3
+    },
+    {
+      "deadline": "2023-12-16",
+      "title": "Umyj okna",
+      "completed": false,
+      "archived": false,
+      "id": 4
+    }
+  ]
+}
