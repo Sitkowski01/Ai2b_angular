@@ -1,5 +1,12 @@
-<h1>{{title}}</h1>
+<header>
+  <a routerLink="/">
+    <h1>Local Storage Contact List</h1>
+  </a>
+  <a routerLink="/add">Add Person &raquo;</a>
+</header>
 
-<app-random [max]="10"></app-random>
-<app-random [max]="100"></app-random>
-<app-list></app-list>
+<div class="router-outlet">
+  <router-outlet></router-outlet>
+</div>
+
+<footer>Mikołaj Sitek</footer>

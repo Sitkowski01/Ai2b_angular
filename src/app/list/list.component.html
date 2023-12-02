@@ -1,13 +1,8 @@
-<div id="frame">
-  <div>List component</div>
-  <div>
-    <input type="text" [(ngModel)]="inputText">
-    <button (click)="inputToArray()">Dodaj</button>
-  </div>
 <ul>
-  <li *ngFor="let el of elements; index as i">
-    {{el}}
-    <a href="#" (click)="remove(i)">Usuń</a>
+  <li *ngFor="let person of people; let i = index">
+    <a [routerLink]="['/details', i]">
+      {{ person.firstName }} {{ person.lastName }} ({{ i }})
+    </a>
+    <button class="delete" (click)="delete(i)">Remove</button>
   </li>
 </ul>
-</div>

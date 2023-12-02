@@ -1,29 +1,28 @@
-import {Component,OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Person} from "../person";
+import {PersonLsService} from "../person-ls.service";
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit{
+export class ListComponent implements OnInit {
+  people: Person[] = [];
 
-  elements: string[];
-  inputText: string;
-
-  constructor() {
-    this.inputText = '';
-    this.elements = [];
+  constructor(
+    private personLsService: PersonLsService,
+  ) {
   }
 
-  ngOnInit(): void{
+  ngOnInit() {
+    this.people = this.personLsService.getAll();
   }
 
-  inputToArray(): void{
-    this.elements.push(this.inputText);
-    this.inputText = '';
-  }
-  remove(index: number):void {
-    this.elements.splice(index, 1);
-    console.log("remove" + index);
+  delete(index: number): void {
+    if (confirm("Are you sure?")) {
+      this.personLsService.deletePerson(index);
+      this.people = this.personLsService.getAll();
+    }
   }
 }
