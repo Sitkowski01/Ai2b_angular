@@ -13,9 +13,30 @@
     {
       "deadline": "2023-12-16",
       "title": "Umyj okna",
+      "completed": true,
+      "archived": true,
+      "id": 4
+    },
+    {
+      "title": "wyczysc",
+      "deadline": "2023-12-09",
+      "completed": true,
+      "archived": true,
+      "id": 5
+    },
+    {
+      "title": "adsadsa",
+      "deadline": "2023-12-23",
+      "completed": true,
+      "archived": true,
+      "id": 6
+    },
+    {
+      "title": "Wyczyść schody",
+      "deadline": "2023-12-24",
       "completed": false,
       "archived": false,
-      "id": 4
+      "id": 7
     }
   ]
 }

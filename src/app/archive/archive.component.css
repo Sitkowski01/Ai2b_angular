@@ -42,3 +42,7 @@
   grid-area: actions;
   text-align: right;
 }
+.green-button {
+  background-color: green; /* lub użyj konkretnego odcienia */
+  color: white; /* kolor tekstu, można dostosować */
+}

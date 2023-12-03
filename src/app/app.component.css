@@ -31,3 +31,7 @@ header nav {
   display: flex;
   gap: 1em;
 }
+.spacer{
+  display: flex;
+  gap: 100px;
+}
