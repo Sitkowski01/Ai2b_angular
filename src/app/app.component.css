@@ -7,31 +7,27 @@ header {
   padding: 0 1em;
   margin-bottom: 1em;
 }
-
 header a {
   color: var(--accent-color);
   text-decoration: none;
 }
-
 header a.active {
   text-decoration: underline;
 }
-
 .router-outlet {
-  min-height: 79vh;
+  min-height: 70vh;
 }
-
 footer {
   background-color: var(--primary-color);
   color: var(--accent-color);
   padding: 0.5em 1em;
 }
-
 header nav {
   display: flex;
   gap: 1em;
 }
-.spacer{
-  display: flex;
-  gap: 100px;
+
+a.logout {
+  margin-left: 1em;
+  color: var(--accent-color);
 }

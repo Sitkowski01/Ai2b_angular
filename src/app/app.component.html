@@ -1,14 +1,30 @@
-<mat-toolbar>
-  <h1 style="margin-right: 64rem;">Backend-Based Task Manager</h1>
-  <div class="spacer"></div>
-  <mat-chip-listbox>
-    <a mat-chip-option routerLink="/tasks" routerLinkActive="active" #rla1="routerLinkActive" [selected]="rla1.isActive">Tasks</a>
-    <a mat-chip-option routerLink="/tasks" routerLinkActive="active" #rla2="routerLinkActive" [selected]="rla2.isActive">Archive</a>
-  </mat-chip-listbox>
-</mat-toolbar>
+<!--suppress AngularUndefinedBinding -->
+<header>
+  <h1><a routerLink="/">JWT Authorization Example</a></h1>
+  <nav>
+    <a routerLink="/"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}"
+    >Start</a>
+    <a *ngIf="canAccessUsers()"
+       routerLink="/users"
+       routerLinkActive="active">Users</a>
+    <a *ngIf="canAccessItems()"
+       routerLink="/items"
+       routerLinkActive="active">Items</a>
+  </nav>
+</header>
 
 <div class="router-outlet">
   <router-outlet></router-outlet>
 </div>
 
-<footer>Mikołaj Sitek</footer>
+<footer>
+  <div *ngIf="getUsername()">
+    {{ getUsername() }}
+    <a class="logout" href (click)="logout()">Logout</a>
+  </div>
+  <div *ngIf="!getUsername()">
+    Not logged in
+  </div>
+</footer>

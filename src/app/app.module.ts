@@ -3,42 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TasksComponent } from './tasks/tasks.component';
-import {HttpClientModule} from "@angular/common/http";
+import { StartComponent } from './start/start.component';
+import { ItemsComponent } from './items/items.component';
+import { UsersComponent } from './users/users.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {JwtModule} from "@auth0/angular-jwt";
 import {FormsModule} from "@angular/forms";
-import { ArchiveComponent } from './archive/archive.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from "@angular/material/button";
-import {MatIconModule} from "@angular/material/icon";
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatChipsModule} from "@angular/material/chips";
-import {MatInputModule} from "@angular/material/input";
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatNativeDateModule} from "@angular/material/core";
-import {MatCardModule} from "@angular/material/card";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    TasksComponent,
-    ArchiveComponent
+    StartComponent,
+    ItemsComponent,
+    UsersComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: () => localStorage.getItem('access_token'),
+        allowedDomains: ['labjwt.zecer.wi.zut.edu.pl'],
+      }
+    }),
     FormsModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCheckboxModule,
-    MatToolbarModule,
-    MatChipsModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatCardModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
